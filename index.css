@@ -1,156 +1,238 @@
-body {
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f0ece0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f2e8;
+    color: #2c2c2c;
+}
+
+/* CABEÇALHO */
 header {
-    background: #1e3a5f;
+    background: #142f4c;
     color: white;
-    padding: 25px 20px;
+    padding: 26px 20px;
     text-align: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 32px;
+    font-size: 36px;
+    margin-bottom: 16px;
     letter-spacing: 1px;
 }
 
+/* MENU */
 nav {
-    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
 nav a {
-    color: #f0c040;
+    color: #f4c95d;
     text-decoration: none;
-    margin: 0 12px;
     font-weight: bold;
     font-size: 15px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: 0.25s;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    background: #f4c95d;
+    color: #142f4c;
 }
 
+/* BANNER */
 .banner {
-    background: linear-gradient(
-        rgba(20, 45, 80, 0.88),
-        rgba(20, 45, 80, 0.88)
-    ),
-    url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da");
+    min-height: 460px;
+    background:
+        linear-gradient(
+            rgba(20, 47, 76, 0.82),
+            rgba(20, 47, 76, 0.82)
+        ),
+        url("../img/banner-livraria.jpg");
 
     background-size: cover;
     background-position: center;
-
-    min-height: 420px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
+
+    padding: 40px 20px;
     color: white;
 }
 
 .banner-conteudo {
-    max-width: 680px;
-    padding: 30px 20px;
+    max-width: 760px;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 40px 32px;
+    border-radius: 18px;
+    backdrop-filter: blur(3px);
 }
 
 .banner h2 {
-    font-size: 58px;
-    color: #f0c040;
-    margin-bottom: 8px;
+    font-size: 64px;
+    color: #f4c95d;
+    margin-bottom: 12px;
 }
 
 .slogan {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    color: #e8dfc8;
+    color: #fff3cf;
+    margin-bottom: 18px;
 }
 
 .banner p {
-    font-size: 17px;
-    line-height: 1.6;
-    color: #ccc;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #f1eadc;
+    margin-bottom: 28px;
 }
 
+/* BOTÃO DO BANNER */
 .btn-banner {
     display: inline-block;
-    margin-top: 22px;
-    background: #f0c040;
-    color: #1e3a5f;
+    background: #f4c95d;
+    color: #142f4c;
     text-decoration: none;
-    padding: 14px 32px;
-    border-radius: 6px;
+    padding: 15px 34px;
+    border-radius: 30px;
     font-weight: bold;
     font-size: 16px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.28);
+    transition: 0.25s;
 }
 
 .btn-banner:hover {
-    background: #d4a017;
+    background: #d9a928;
+    transform: translateY(-3px);
 }
 
+/* SEÇÃO DE PRODUTOS */
 .produtos {
-    padding: 50px 40px;
+    padding: 60px 35px;
     text-align: center;
 }
 
 .produtos h2 {
-    color: #1e3a5f;
-    font-size: 28px;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #f0c040;
-    display: inline-block;
-    padding-bottom: 6px;
+    color: #142f4c;
+    font-size: 32px;
+    margin-bottom: 35px;
+    position: relative;
 }
 
+.produtos h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: #f4c95d;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+/* CARDS */
 .cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 24px;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
 }
 
 .card {
-    width: 210px;
     background: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s;
+    padding: 18px;
+    border-radius: 18px;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.14);
+    transition: 0.25s;
 }
 
 .card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-7px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.20);
 }
 
 .card img {
     width: 100%;
-    height: 270px;
+    height: 310px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 14px;
+    margin-bottom: 14px;
 }
 
 .card h3 {
-    color: #1e3a5f;
-    font-size: 15px;
-    margin: 10px 0 5px;
+    color: #142f4c;
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
 .card p {
-    color: #d4a017;
+    color: #b47b00;
+    font-size: 20px;
     font-weight: bold;
-    font-size: 17px;
-    margin: 0;
 }
 
+/* RODAPÉ */
 footer {
-    background: #1e3a5f;
-    color: #ccc;
+    background: #142f4c;
+    color: #ddd;
     text-align: center;
-    padding: 18px;
-    margin-top: 50px;
+    padding: 22px 15px;
+    margin-top: 40px;
     font-size: 14px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    .banner {
+        min-height: 390px;
+    }
+
+    .banner h2 {
+        font-size: 44px;
+    }
+
+    .slogan {
+        font-size: 21px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .banner-conteudo {
+        padding: 30px 22px;
+    }
+
+    .produtos {
+        padding: 45px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 14px;
+        padding: 7px 10px;
+    }
+
+    .banner h2 {
+        font-size: 36px;
+    }
+
+    .card img {
+        height: 270px;
+    }
 }
